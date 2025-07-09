@@ -5,22 +5,30 @@
 }
 
 body {
-    background-color: rgb(107, 113, 107);
+    background: linear-gradient(135deg, #6b716b, #b5c1b3);
+    color: #222;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 100px 40px;
+    padding: 80px 20px;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #1f1f1f;
+    margin-bottom: 1rem;
 }
 
 .container {
-    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    padding: 40px;
 }
 
 .game {
@@ -38,48 +46,122 @@ body {
     width: 18vmin;
     border-radius: 1rem;
     border: none;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
     font-size: 8vmin;
-    color: rgb(138, 36, 2);
+    color: #8a2402;
     background-color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-#reset {
-    padding: 1.3rem 1.6rem;
-    font-size: 1.2rem;
+.box:hover:not(:disabled) {
+    transform: scale(1.05);
+    background-color: #f3f3f3;
+}
+
+.box:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+#reset, #new_game {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.1rem;
     border-radius: 1rem;
-    background-color: #f00;
+    background-color: #ff4d4d;
     color: #fff;
     border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset:hover {
+    background-color: #e60000;
 }
 
 #new_game {
-    padding: 1.3rem 1.6rem;
-    font-size: 1.2rem;
-    border-radius: 1rem;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
-    border: none;
+    background-color: #222;
+}
+
+#new_game:hover {
+    background-color: #444;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.controls label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.controls select {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    color: #222;
+    cursor: pointer;
 }
 
 .win_container {
-    height: 100vmin;
+    height: 100vh;
+    width: 100vw;
     z-index: 2;
-    background-color: #ffdd00;
+    background-color: rgba(0, 0, 0, 0.85);
     padding: 5rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     gap: 1.5rem;
+    top: 0;
+    left: 0;
 }
 
 .win_container #message {
-    font-size: 8vmin;
-    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    color: #ffdd00;
+    text-shadow: 0 0 10px #fff;
 }
 
 .hidden {
     display: none;
+}
+
+/* 🔁 Responsive Design */
+@media (max-width: 600px) {
+    .game {
+        width: 90vmin;
+        height: 90vmin;
+        gap: 2vmin;
+    }
+
+    .box {
+        width: 28vmin;
+        height: 28vmin;
+        font-size: 10vmin;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #reset, #new_game {
+        width: 80%;
+        font-size: 1rem;
+    }
 }

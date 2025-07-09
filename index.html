@@ -2,38 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIC-TAC-TOE</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TIC-TAC-TOE</title>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-    <div class="win_container hidden">
-        <p id="message">Win Win Win</p>
-        <button id="new_game">New Game</button>
+
+  <!-- Win Message Popup -->
+  <div class="win_container hidden">
+    <p id="message">Win Win Win</p>
+    <button id="new_game">New Game</button>
+  </div>
+
+  <main>
+    <h1>Tic Tac Toe</h1>
+
+    <!-- Controls -->
+    <div class="controls">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <label for="first">Who starts:</label>
+      <select id="first">
+        <option value="player">Player</option>
+        <option value="ai">AI</option>
+      </select>
     </div>
-    <main>
-        <h1>Tic Tac Toe</h1>
-        <div class="container">
-            <div class="game">
 
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-            </div>
-        </div>
-        <button id="reset">Reset game</button>
+    <!-- Game Board -->
+    <div class="container">
+      <div class="game">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+    </div>
 
-    </main>
+    <!-- Reset Button -->
+    <button id="reset">Reset Game</button>
+  </main>
 
-    <script src="./js/app.js"></script>
+  <!-- JavaScript File -->
+  <script src="./js/app.js"></script>
+
 </body>
-
 </html>
